@@ -15,9 +15,10 @@ function App() {
       name: "Mr. Nobody",
       year: "2009",
       rate: 5,
-
+      trailer: "https://youtu.be/vXf3gVYXlHg",
       description:
         "The film tells the life story of Nemo Nobody, a 118-year-old man who is the last mortal on Earth after the human race has achieved quasi-immortality.",
+
       id: 1
     },
     {
@@ -26,7 +27,7 @@ function App() {
       name: "I Origin",
       year: "2014",
       rate: 4,
-
+      trailer: "https://youtu.be/Mk4briOLrTQ",
       description:
         "I Origins is an independent drama sci-fi , written, produced and directed by Mike Cahill, released in 2014.",
       id: 2
@@ -37,7 +38,7 @@ function App() {
       name: "Interstellar",
       year: "2014",
       rate: 3,
-
+      trailer: "https://youtu.be/zSWdZVtXT7E",
       description:
         "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
       id: 3
@@ -48,7 +49,7 @@ function App() {
       name: "The House At The End Of Time",
       year: "2013",
       rate: 4,
-
+      trailer: "https://youtu.be/jxY_cqwiSZY",
       description:
         "Dulce encounters apparitions in her house and unleashes a terrible prophecy. Thirty years later, Dulce, now an old woman, returns to unravel the mystery that has terrorized her for years.",
       id: 4
@@ -59,7 +60,7 @@ function App() {
       name: "Inception",
       year: "2010",
       rate: 4,
-
+      trailer: "https://youtu.be/YoHD9XEInc0",
       description:
         "Inception is a thriller of science fiction American-British written, directed and produced by Christopher Nolan, released in 2010.",
       id: 5
@@ -70,7 +71,7 @@ function App() {
       name: "Donnie Darko",
       year: "2001",
       rate: 4,
-
+      trailer: "https://youtu.be/ZZyBaFYFySk",
       description:
         "Donnie Darko, an awkward teenager, befriends Frank, a figure in a bunny costume only he can see, who informs Donnie that the world will end in 28 days, 6 hours, 42 minutes, and 12 seconds.",
       id: 6
@@ -80,7 +81,7 @@ function App() {
       name: "Sherlock Holmes",
       year: "2009",
       rate: 5,
-
+      trailer: "https://youtu.be/J7nJksXDBWc",
       description:
         "Detective Sherlock Holmes and his partner, Dr Watson, send Blackwood, a serial killer, to the gallows. However, they are shocked to learn that he is back from the dead and must pursue him again.",
       id: 7
@@ -89,6 +90,9 @@ function App() {
 
   const [searchValue, setsearchValue] = useState("");
   const [rate, setRate] = useState(1);
+  const handleAdd = (add) => {
+    setMovies([...movies, add]);
+  };
 
   return (
     <div>
@@ -103,7 +107,7 @@ function App() {
         <br />
       </div>
       <List movies={movies} searchValue={searchValue} rate={rate} />
-      <AddMovie Add={AddMovie} />
+      <AddMovie Add={AddMovie} handleAdd={handleAdd} />
     </div>
   );
 }
