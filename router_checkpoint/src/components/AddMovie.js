@@ -61,7 +61,7 @@ function AddMovie({ Add }) {
             variant="primary"
             onClick={() =>
               Add({
-                title: NewTitle,
+                name: NewTitle,
                 description: NewDesc,
                 rate: NewRate,
                 img: NewImg
