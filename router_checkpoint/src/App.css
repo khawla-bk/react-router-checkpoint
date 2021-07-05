@@ -1,38 +1,111 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchbar {
+  float: right;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.nav {
+  background-color: black;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
+  width: -webkit-fill-available;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.filter p {
+  margin-top: 40px;
+}
+.MovieCard {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.caption {
+  display: block;
+  width: 240px;
+}
+img {
+  height: 420px;
+  width: 280px;
+  padding: 20px;
+}
+body {
+  background-color: #a5a5a5;
+}
+.filterrating {
+  font-size: 20px;
+  color: #a7b8d2;
+}
+span {
+  color: #5c6574;
+}
+.card {
+  width: 224px;
+  height: 500px;
+  margin: 30px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+.card-img-top {
+  width: 224px;
+  height: 340px;
+}
+.card-body {
+  height: 15px;
+}
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-sub {
+  width: 100%;
+  background-color: #5af48e;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.input-sub:hover {
+  background-color: #39c861;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-modal {
+  width: 100px;
+  height: 10s0px;
+  margin: 20px;
+  background-color: rgb(233, 230, 225);
+}
+.modall {
+  position: absolute;
+  top: 40px;
+  left: 255px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  width: 800px;
+  height: 440px;
+}
+.img-plus {
+  width: 60px;
+  height: 35px;
 }
