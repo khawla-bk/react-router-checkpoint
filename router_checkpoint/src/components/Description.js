@@ -7,7 +7,7 @@ function Description(props) {
   return (
     <div>
       <h1> Movie's Description</h1>
-      <h3>{description}</h3>
+      <p>{description}</p>
 
       <Link to="/">previous</Link>
     </div>
