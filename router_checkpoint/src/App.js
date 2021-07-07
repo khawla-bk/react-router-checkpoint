@@ -96,18 +96,18 @@ function App() {
 
   return (
     <div>
-      <div className="nav">
+      <switch>
         <Navb />
-        <Search setsearchValue={setsearchValue} />
-      </div>
-
-      <div className="filter">
+        <Route exact path="/">
+          <Search setsearchValue={setsearchValue} />
+        </Route>
         <p> Filter By Rating: </p>
         <StarRating setRate={setRate} /> <br />
-        <br />
-      </div>
-      <List movies={movies} searchValue={searchValue} rate={rate} />
-      <AddMovie Add={AddMovie} handleAdd={handleAdd} />
+        <Route path="/Movie/:ID">
+          <Movie movies={movies} searchValue={searchValue} rate={rate} />
+        </Route>
+        <AddMovie Add={AddMovie} handleAdd={handleAdd} />
+      </switch>
     </div>
   );
 }
