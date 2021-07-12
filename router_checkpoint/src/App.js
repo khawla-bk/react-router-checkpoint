@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import React from "react";
 import "./App.css";
@@ -6,6 +7,8 @@ import Search from "./components/Search";
 import List from "./components/List";
 import AddMovie from "./components/AddMovie";
 import Navb from "./components/Navbar";
+import { Route } from "react-router-dom";
+import Movie from "./components/Movie";
 
 function App() {
   const [movies, setMovies] = useState([
@@ -15,7 +18,7 @@ function App() {
       name: "Mr. Nobody",
       year: "2009",
       rate: 5,
-      trailer: "https://youtu.be/vXf3gVYXlHg",
+      trailer: "https://www.youtube.com/embed/vXf3gVYXlHg",
       description:
         "The film tells the life story of Nemo Nobody, a 118-year-old man who is the last mortal on Earth after the human race has achieved quasi-immortality.",
 
@@ -27,7 +30,7 @@ function App() {
       name: "I Origin",
       year: "2014",
       rate: 4,
-      trailer: "https://youtu.be/Mk4briOLrTQ",
+      trailer: "https://www.youtube.com/embed/Mk4briOLrTQ",
       description:
         "I Origins is an independent drama sci-fi , written, produced and directed by Mike Cahill, released in 2014.",
       id: 2
@@ -38,7 +41,7 @@ function App() {
       name: "Interstellar",
       year: "2014",
       rate: 3,
-      trailer: "https://youtu.be/zSWdZVtXT7E",
+      trailer: "https://www.youtube.com/embed/zSWdZVtXT7E",
       description:
         "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
       id: 3
@@ -49,7 +52,7 @@ function App() {
       name: "The House At The End Of Time",
       year: "2013",
       rate: 4,
-      trailer: "https://youtu.be/jxY_cqwiSZY",
+      trailer: "https://www.youtube.com/embed/jxY_cqwiSZY",
       description:
         "Dulce encounters apparitions in her house and unleashes a terrible prophecy. Thirty years later, Dulce, now an old woman, returns to unravel the mystery that has terrorized her for years.",
       id: 4
@@ -60,7 +63,7 @@ function App() {
       name: "Inception",
       year: "2010",
       rate: 4,
-      trailer: "https://youtu.be/YoHD9XEInc0",
+      trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
       description:
         "Inception is a thriller of science fiction American-British written, directed and produced by Christopher Nolan, released in 2010.",
       id: 5
@@ -71,7 +74,7 @@ function App() {
       name: "Donnie Darko",
       year: "2001",
       rate: 4,
-      trailer: "https://youtu.be/ZZyBaFYFySk",
+      trailer: "https://www.youtube.com/embed/ZZyBaFYFySk",
       description:
         "Donnie Darko, an awkward teenager, befriends Frank, a figure in a bunny costume only he can see, who informs Donnie that the world will end in 28 days, 6 hours, 42 minutes, and 12 seconds.",
       id: 6
@@ -81,7 +84,7 @@ function App() {
       name: "Sherlock Holmes",
       year: "2009",
       rate: 5,
-      trailer: "https://youtu.be/J7nJksXDBWc",
+      trailer: "https://www.youtube.com/embed/J7nJksXDBWc",
       description:
         "Detective Sherlock Holmes and his partner, Dr Watson, send Blackwood, a serial killer, to the gallows. However, they are shocked to learn that he is back from the dead and must pursue him again.",
       id: 7
@@ -98,13 +101,15 @@ function App() {
     <div>
       <switch>
         <Navb />
-        <Route exact path="/">
-          <Search setsearchValue={setsearchValue} />
-        </Route>
+        <Search setsearchValue={setsearchValue} />
         <p> Filter By Rating: </p>
         <StarRating setRate={setRate} /> <br />
-        <Route path="/Movie/:ID">
-          <Movie movies={movies} searchValue={searchValue} rate={rate} />
+        <Route exact path="/">
+          <List movies={movies} searchValue={searchValue} rate={rate} />
+        </Route>
+        {/* <List movies={movies} searchValue={searchValue} rate={rate} /> */}
+        <Route path="/movie/:ID">
+          <Movie movies={movies} />
         </Route>
         <AddMovie Add={AddMovie} handleAdd={handleAdd} />
       </switch>
@@ -113,3 +118,4 @@ function App() {
 }
 
 export default App;
+
