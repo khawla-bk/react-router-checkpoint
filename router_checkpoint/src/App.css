@@ -110,7 +110,10 @@ select {
   width: 800px;
   height: 440px;
 }
-.img-plus {
-  width: 60px;
-  height: 35px;
+
+.cardbody {
+  width: 560px;
+  height: 450px;
+  border: 1px solid black;
+  background-color: #d9e8ff;
 }
