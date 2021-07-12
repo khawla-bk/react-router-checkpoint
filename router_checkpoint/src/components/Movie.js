@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 
-function Movie({ movies, name, trailer, description }) {
+function Movie({ movies }) {
   const history = useHistory();
   const { ID } = useParams();
   const Mov = movies.find((movie, i) => movie.id === Number(ID));
@@ -13,12 +13,13 @@ function Movie({ movies, name, trailer, description }) {
           width="560"
           height="315"
           src={Mov.trailer}
+          title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
 
-        <Card.Body>
+        <Card.Body className="cardbody">
           <Card.Title>{Mov.name}</Card.Title>
           <Card.Text>{Mov.description}</Card.Text>
 
